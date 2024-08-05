@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://brk2spqelbbaw"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_0co0g"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x4oqn"]
+radius = 0.25
+
+[sub_resource type="SphereMesh" id="SphereMesh_q7vyb"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_uejdb"]
+
+[node name="Player" type="Area3D"]
+script = ExtResource("1_0co0g")
+rendererPath = NodePath("Node3D")
+testPath = NodePath("Node3D/MeshInstance3D2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_x4oqn")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+mesh = SubResource("SphereMesh_q7vyb")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(2.425, 0, 0, 0, 1, 0, 0, 0, 0.145, 0, -1, 0)
+mesh = SubResource("BoxMesh_uejdb")
+skeleton = NodePath("../..")

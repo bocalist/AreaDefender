@@ -1,0 +1,13 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://njkobvuc8k3b"]
+
+[ext_resource type="Sky" uid="uid://dd6sjjg1xtyum" path="res://Assets/World/Sky.tres" id="1_by3gn"]
+
+[resource]
+background_mode = 2
+background_color = Color(0.605274, 0.605274, 0.605274, 1)
+background_energy_multiplier = 4.2
+sky = ExtResource("1_by3gn")
+sky_custom_fov = 162.5
+sky_rotation = Vector3(2.11185, 0, 0)
+ambient_light_source = 2
+ambient_light_color = Color(0.912289, 0.912289, 0.912289, 1)
