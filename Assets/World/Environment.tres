@@ -10,4 +10,4 @@ sky = ExtResource("1_by3gn")
 sky_custom_fov = 162.5
 sky_rotation = Vector3(2.11185, 0, 0)
 ambient_light_source = 2
-ambient_light_color = Color(0.912289, 0.912289, 0.912289, 1)
+ambient_light_color = Color(1, 1, 1, 1)

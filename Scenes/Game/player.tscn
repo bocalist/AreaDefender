@@ -1,15 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://brk2spqelbbaw"]
+[gd_scene load_steps=9 format=3 uid="uid://brk2spqelbbaw"]
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_0co0g"]
+[ext_resource type="PackedScene" uid="uid://dm6n7qv167gj5" path="res://Assets/GameObjects/Player/Player.fbx" id="2_g23v8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x4oqn"]
-radius = 0.25
+radius = 0.75
 
 [sub_resource type="SphereMesh" id="SphereMesh_q7vyb"]
 radius = 0.25
 height = 0.5
 
-[sub_resource type="BoxMesh" id="BoxMesh_uejdb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qf2pg"]
+albedo_color = Color(0.575285, 0.966392, 0.858044, 1)
+emission_enabled = true
+emission = Color(0.451628, 0.775496, 0.966619, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x0fj2"]
+material = SubResource("StandardMaterial3D_qf2pg")
+height = 1.5
+
+[sub_resource type="Curve" id="Curve_lj6rd"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 360), 0.0, 0.0, 0, 0, Vector2(1, -360), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_81m6v"]
+_data = [Vector2(0, 0.296703), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Player" type="Area3D"]
 script = ExtResource("1_0co0g")
@@ -22,11 +40,26 @@ shape = SubResource("SphereShape3D_x4oqn")
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
-mesh = SubResource("SphereMesh_q7vyb")
-skeleton = NodePath("../MeshInstance3D")
+[node name="Root Scene" parent="Node3D" instance=ExtResource("2_g23v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(2.425, 0, 0, 0, 1, 0, 0, 0, 0.145, 0, -1, 0)
-mesh = SubResource("BoxMesh_uejdb")
-skeleton = NodePath("../..")
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("SphereMesh_q7vyb")
+skeleton = NodePath("")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.04726, 0)
+amount = 50
+lifetime = 0.5
+draw_order = 1
+mesh = SubResource("CapsuleMesh_x0fj2")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 0, 0)
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -160.0
+angular_velocity_curve = SubResource("Curve_lj6rd")
+angle_max = 720.0
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+scale_amount_curve = SubResource("Curve_81m6v")

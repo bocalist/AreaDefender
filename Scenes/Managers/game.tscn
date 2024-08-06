@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://4l3d5sh5yjer"]
+[gd_scene load_steps=6 format=3 uid="uid://4l3d5sh5yjer"]
 
 [ext_resource type="PackedScene" uid="uid://brk2spqelbbaw" path="res://Scenes/Game/player.tscn" id="1_gd1a7"]
+[ext_resource type="Script" path="res://Scripts/Managers/GameManager.cs" id="1_th2ja"]
 [ext_resource type="Script" path="res://Scripts/Camera.cs" id="2_4xqvm"]
 [ext_resource type="Environment" uid="uid://njkobvuc8k3b" path="res://Assets/World/Environment.tres" id="2_t0g2n"]
 [ext_resource type="PackedScene" uid="uid://dk6bais3xcxoe" path="res://Scenes/Game/Area.tscn" id="3_tdprh"]
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_th2ja")
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_t0g2n")
@@ -14,9 +16,75 @@ environment = ExtResource("2_t0g2n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.7287)
 fov = 50.0
 script = ExtResource("2_4xqvm")
-targetPath = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_gd1a7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.545, -2.12, 0)
 
 [node name="Area" parent="." instance=ExtResource("3_tdprh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Area2" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6454, 7.56851, -6)
+
+[node name="Area3" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82271, 10.5094, -6)
+
+[node name="Area4" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73434, 32.5864, -6)
+
+[node name="Area5" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2332, 30.2157, -6)
+
+[node name="Area6" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.4583, -15.1235, -6)
+
+[node name="Area7" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.8279, 4.87906, -6)
+
+[node name="Area8" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.525352, -12.4565, -6)
+
+[node name="Area9" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1206, -9.19684, -6)
+
+[node name="Area10" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.8991, 3.39739, -6)
+
+[node name="Area11" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10085, 21.3974, -6)
+
+[node name="Area12" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.438, 3.6173, -6)
+
+[node name="Area13" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9558, -14.0146, -6)
+
+[node name="Area14" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9558, 29.9854, -6)
+
+[node name="Area15" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.2196, 24.355, -6)
+
+[node name="Area16" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8825, 15.3168, -6)
+
+[node name="Area17" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.4029, -10.7606, -6)
+
+[node name="Area18" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.0359, 3.46343, -6)
+
+[node name="Area19" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0296, -29.4297, -6)
+
+[node name="Area20" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9394, -33.2821, -6)
+
+[node name="Area21" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36002, -25.8737, -6)
+
+[node name="Area22" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.163, -22.1695, -6)
+
+[node name="Area23" parent="." instance=ExtResource("3_tdprh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4232, -8.2418, -6)
